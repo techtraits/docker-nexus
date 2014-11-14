@@ -8,6 +8,7 @@ RUN ["wget", "-O", "/tmp/nexus-latest-bundle.tar.gz", "http://www.sonatype.org/d
 RUN tar -zxvf /tmp/nexus-latest-bundle.tar.gz -C /opt/sonatype-nexus --strip-components=1
 RUN useradd --user-group --system --home-dir /opt/sonatype-nexus nexus
 RUN chown -R nexus:nexus /opt/sonatype-work /opt/sonatype-nexus /opt/sonatype-work/nexus
+RUN sed -i 's/nexus-webapp-context-path=\/nexus/nexus-webapp-context-path=\//' /opt/sonatype-nexus/conf/nexus.properties
 
 USER nexus
 

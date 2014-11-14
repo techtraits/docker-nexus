@@ -13,3 +13,6 @@ To backup nexus data:
 ```  
 docker run --volumes-from nexus -v $(pwd):/backup ubuntu tar cvf /backup.tar /opt/sonatype-work/
 ```
+
+Nexus documentation:
+http://books.sonatype.com/nexus-book/reference/index.html
